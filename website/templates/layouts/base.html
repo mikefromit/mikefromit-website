@@ -1,0 +1,90 @@
+{% block doc -%}
+  <!DOCTYPE html>
+  <html {% block html_attribs %}{% endblock html_attribs %}>
+  {%- block html %}
+    <head>
+      {%- block head %}
+        <title>{% block title %}{% endblock title %}</title>
+
+        {%- block metas %}
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        {%- endblock metas %}
+
+        {%- block styles %}
+          <!-- ADD CSS STYLE SOURCES NEEDED FOR ALL TEMPLATES -->
+
+          <!-- Import Google Icon Font -->
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                rel="stylesheet">
+          <!-- Import Google Roboto Font -->
+          <link
+            href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'
+            rel='stylesheet'>
+          <!-- Import Custom CSS -->
+          <!-- Call super() on the child template to run these -->
+          <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+        {%- endblock styles %}
+
+      {% endblock head %}
+
+    </head>
+
+    <body{% block body_attribs %}{% endblock body_attribs %}>
+    {% block body -%}
+
+      {% block header %}
+      {% endblock header %}
+
+      {% block navbar %}
+        {% include 'includes/nav.html' %}
+      {% endblock navbar %}
+
+      {% block sidebar %}
+
+        {% block content %}
+        {% endblock content %}
+
+      {% endblock sidebar %}
+
+      {% block footer %}
+      {% endblock footer %}
+
+      {% block scripts %}
+        <noscript>
+          <h1>Warning: Javascript seems to be disabled</h1>
+          <p>This website requires that Javascript be enabled on your
+            browser.</p>
+          <p>Instructions for enabling Javascript in your browser can be found
+            <a
+              href="http://support.google.com/bin/answer.py?hl=en&answer=23852">here</a>
+          <p>
+        </noscript>
+        <!-- ADD JAVASCRIPT SOURCES NEEDED FOR ALL TEMPLATES -->
+
+        <!-- Import jquery before materialize.js -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+        <script>
+
+          // Initialize collapse button
+          $(".button-collapse").sideNav();
+          // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+          //$('.collapsible').collapsible();
+        </script>
+      {% endblock scripts %}
+
+    {%- endblock body %}
+    </body>
+
+  {% endblock html %}
+  </html>
+
+
+{% endblock doc %}

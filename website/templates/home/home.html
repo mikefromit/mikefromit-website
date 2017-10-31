@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Home | mikefromit website{% endblock title %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12 featured-item">
+        <div class="card-panel">
+          <span class="card-title">Example Card</span>
+          {% if data %}
+          <div class="collection">
+            {% for r in data %}
+            <a href="https://github.com/{{ r.full_name }}" class="collection-item"><span class="badge">{{ r.open_issues }}</span>{{ r.full_name }}</a>
+            {% endfor %}
+          </div>
+          {% else %}
+            <span>There is no example data at the moment =(</span>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock content %}
