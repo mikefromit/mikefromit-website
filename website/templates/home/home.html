@@ -6,22 +6,56 @@
 
   <div class="container">
     <div class="row">
+
+      <!-- At the top of the design show any items marked as featured -->
       <div class="col s12 featured-item">
-        <div class="card-panel">
-          <span class="card-title">Example Card</span>
-          {% if data %}
-          <div class="collection">
-            {% for r in data %}
-            <a href="https://github.com/{{ r.full_name }}" class="collection-item"><span class="badge">{{ r.open_issues }}</span>{{ r.full_name }}</a>
-            {% endfor %}
+        <div class="card large">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="responsive-img" src="static/img/building.jpg">
           </div>
-          {% else %}
-            <span>There is no example data at the moment =(</span>
-          {% endif %}
+          <div class="card-content">
+            <span class="card-title grey-text text-darken-4">Featured Title<i
+              class="material-icons right">stars</i></span>
+            <p>Here is some more information about this product that is only
+              revealed once clicked on.</p>
+          </div>
         </div>
       </div>
-
     </div>
+      <!-- Non-featured Items are organized here by published date-->
+
+      <div class="row">
+        <div class="col s12 m6 l6">
+          <div class="card medium">
+            <div class="card-image">
+              <img src="static/img/python.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">Another Item</span>
+            </div>
+
+          </div>
+        </div>
+        <div class="col s12 m6 l6">
+          <div class="card medium">
+            <div class="card-image">
+              <img src="static/img/circuit_board.jpg">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title grey-text text-darken-4">Another Item</span>
+              </div>
+            </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+
   </div>
 
 {% endblock content %}

@@ -5,7 +5,7 @@ import os
 from flask import Blueprint
 
 
-def register_blueprints(app, package_name, package_path):  # pragma: no cover
+def register_blueprints(app, package_name, package_path):
     """
     Register all Blueprint instances on the specified Flask application found
     in all modules for any found package
