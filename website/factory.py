@@ -29,7 +29,7 @@ def create_app(package_name, package_path, settings=None):
 
     # Use redis sessions
     app.session_interface = RedisSessionInterface(
-        redis_host=app.config['REDIS_HOST'])
+        redis_url=app.config['REDIS_URL'])
 
     # Helper for auto-registering blueprints
     register_blueprints(app, package_name, package_path)

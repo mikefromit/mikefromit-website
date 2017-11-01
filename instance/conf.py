@@ -4,4 +4,4 @@ import os
 DEBUG = os.environ.get('FLASK_DEBUG', False)
 
 # REDIS
-REDIS_HOST = os.environ.get('REDIS_HOST', 'localhost')
+REDIS_URL = os.environ.get('REDIS_URL', None)

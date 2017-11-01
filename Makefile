@@ -1,7 +1,7 @@
 .PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
 
-DB := bl_sparfa_server
+DB := mikefromit
 
 clean: clean-build clean-pyc clean-test
 
@@ -29,11 +29,9 @@ test: ## run tests quickly with the default Python
 docs: ## generate Sphinx HTML documentation
 
 initdb:
-	psql -h 127.0.0.1 -p 5432 -d postgres -U postgres -c "DROP DATABASE IF EXISTS bl_sparfa_server"
-	psql -h 127.0.0.1 -p 5432 -d postgres -U postgres -c "CREATE DATABASE bl_sparfa_server ENCODING 'UTF8'"
-	xz -d -k dev/$(DB).sql.xz
+	psql -h 127.0.0.1 -p 5432 -d postgres -U postgres -c "DROP DATABASE IF EXISTS mikefromit"
+	psql -h 127.0.0.1 -p 5432 -d postgres -U postgres -c "CREATE DATABASE mikefromit ENCODING 'UTF8'"
 	psql -h 127.0.0.1 -p 5432 -d $(DB) -U postgres -v ON_ERROR_STOP=1 -1 -f dev/$(DB).sql
-	rm dev/$(DB).sql
 	alembic upgrade head
 
 venv:

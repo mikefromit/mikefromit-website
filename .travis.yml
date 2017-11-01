@@ -1,0 +1,23 @@
+language: python
+python:
+  - "3.6"
+
+dist: trusty
+sudo: false
+
+services:
+  - redis-server
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+install:
+  - pip install .[dev]
+  - pip install codecov
+
+script:
+  - python setup.py test
+
+after_success:
+  - codecov
