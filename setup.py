@@ -16,7 +16,7 @@ setup(
         'github3.py==0.9.6',
         'redis==2.10.6',
         'click==6.7',
-        'Flask==0.12.2'
+        'Flask==0.12.2',
         'gevent==1.2.2',
         'greenlet==0.4.12',
         'gunicorn==19.7.1',
