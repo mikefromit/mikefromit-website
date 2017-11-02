@@ -1,20 +1,18 @@
+from pip.req import parse_requirements
 from setuptools import find_packages, setup
 
+install_requirements = parse_requirements('requirements.txt')
+
 setup(
-    name='ox-sprint',
+    name='mikefromit-website',
     version='0.0.1',
-    description='',
+    description='mikefromit personal site',
     long_description='',
-    license='',
-    author='m1yag1',
-    author_email='',
+    license='MIT',
+    author='mikefromit',
+    author_email='mike.arbelaez@gmail.com',
     packages=find_packages(),
-    install_requires=[
-        'Flask==0.12.2',
-        'Flask-Security==3.0.0',
-        'github3.py==0.9.6',
-        'redis==2.10.6'
-    ],
+    install_requires=install_requirements(),
     extras_require={
         'dev': [
             'pytest==3.1.3',
