@@ -2,6 +2,7 @@ from pip.req import parse_requirements
 from setuptools import find_packages, setup
 
 install_requirements = parse_requirements('requirements.txt')
+requirements = [str(r.req) for r in install_requirements]
 
 setup(
     name='mikefromit-website',
@@ -12,7 +13,7 @@ setup(
     author='mikefromit',
     author_email='mike.arbelaez@gmail.com',
     packages=find_packages(),
-    install_requires=install_requirements(),
+    install_requires=requirements,
     extras_require={
         'dev': [
             'pytest==3.1.3',
