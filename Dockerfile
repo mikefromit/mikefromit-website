@@ -11,10 +11,15 @@ ENV PYTHONIOENCODING utf_8
 ENV PYTHONPATH /app:$PYTHONPATH
 ENV PATH="/app/bin:${PATH}"
 
+# Heroku recommends running as a user but it didn't work
+# FIXME: fix running docker container as user in dockerfile on Heroku
 # Run as User
 #RUN adduser -D myuser
 #USER myuser
 
 RUN chmod +x bin/entrypoint.sh
 
-CMD ["bin/entrypoint.sh", "wsgi:app"]
+# The entry point with tini is not working on heroku
+# ENTRYPOINT ["/usr/sbin"]
+# FIXME: fix entrypoint for tini not working in dockerfile on Heroku
+CMD ["/tini", "--", "bin/docker-entrypoint.sh", "wsgi:app"]
