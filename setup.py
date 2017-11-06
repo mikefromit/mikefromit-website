@@ -1,19 +1,30 @@
 from setuptools import find_packages, setup
 
+
 setup(
-    name='ox-sprint',
+    name='mikefromit-website',
     version='0.0.1',
-    description='',
+    description='mikefromit personal site',
     long_description='',
-    license='',
-    author='m1yag1',
-    author_email='',
+    license='MIT',
+    author='mikefromit',
+    author_email='mike.arbelaez@gmail.com',
     packages=find_packages(),
     install_requires=[
         'Flask==0.12.2',
         'Flask-Security==3.0.0',
         'github3.py==0.9.6',
-        'redis==2.10.6'
+        'redis==2.10.6',
+        'click==6.7',
+        'Flask==0.12.2',
+        'gevent==1.2.2',
+        'greenlet==0.4.12',
+        'gunicorn==19.7.1',
+        'itsdangerous==0.24',
+        'Jinja2==2.9.6',
+        'MarkupSafe==1.0',
+        'redis==2.10.6',
+        'Werkzeug==0.12.2'
     ],
     extras_require={
         'dev': [
