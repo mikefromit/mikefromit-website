@@ -1,14 +1,23 @@
+language: python
+python:
+- '3.6'
 dist: trusty
 sudo: false
 services:
   - redis-server
   - docker
+before_install:
+  - docker build -t m1yag1/mikefromit .
+  - docker run m1yag1/mikefromit /bin/sh -c "cd /app; pip3 install .[dev]; python setup.py test"
+install:
+  - pip install .[dev]
+  - pip install codecov
 script:
   - python setup.py test
 after_success:
   - codecov
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" "$HEROKU_REGISTRY_URL";
-    docker push mike.arb/mikefromit;
+    docker push m1yag1/mikefromit;
     fi
 
