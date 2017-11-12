@@ -1,16 +1,18 @@
 import pickle
 from datetime import timedelta
 from uuid import uuid4
+
+import os
 from redis import Redis
 from werkzeug.datastructures import CallbackDict
 from flask.sessions import SessionInterface, SessionMixin
 
 
 class RedisSession(CallbackDict, SessionMixin):
-
     def __init__(self, initial=None, sid=None, new=False):
         def on_update(self):
             self.modified = True
+
         CallbackDict.__init__(self, initial, on_update)
         self.sid = sid
         self.new = new
@@ -21,8 +23,9 @@ class RedisSessionInterface(SessionInterface):
     serializer = pickle
     session_class = RedisSession
 
-    def __init__(self, redis_url=None, prefix='session:'):
-        redis = Redis.from_url(redis_url)
+    def __init__(self, prefix='session:'):
+        redis = Redis.from_url(
+            os.environ.get('REDIS_URL', 'redis://localhost:6379'))
         self.redis = redis
         self.prefix = prefix
 
