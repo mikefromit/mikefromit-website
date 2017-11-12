@@ -16,6 +16,6 @@ ENV PATH="/app/bin:${PATH}"
 #RUN adduser -D myuser
 #USER myuser
 
-RUN chmod +x bin/entrypoint.sh
+RUN chmod +x bin/docker-entrypoint.sh
 
-CMD ["bin/entrypoint.sh", "wsgi:app"]
+CMD ["bin/docker-entrypoint.sh", "wsgi:app"]
