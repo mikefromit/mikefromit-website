@@ -1,23 +1,22 @@
 language: python
 python:
-  - "3.6"
-
+- '3.6'
 dist: trusty
 sudo: false
-
 services:
-  - redis-server
-
+- redis-server
 cache:
   directories:
-    - $HOME/.cache/pip
-
+  - "$HOME/.cache/pip"
 install:
-  - pip install .[dev]
-  - pip install codecov
-
+- pip install .[dev]
+- pip install codecov
 script:
-  - python setup.py test
-
+- python setup.py test
 after_success:
-  - codecov
+- codecov
+- if [ "$TRAVIS_BRANCH" == "master" ]; then
+  docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" "$HEROKU_REGISTRY_URL";
+  docker push m1yag1/mikefromit;
+  fi
+
