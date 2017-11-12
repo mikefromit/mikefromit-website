@@ -3,6 +3,7 @@ RUN apk add --update --no-cache gcc g++ postgresql-dev && \
     apk add --no-cache tini
 WORKDIR /app
 COPY ["requirements.txt", "/app"]
+COPY ["setup.py", "/app"]
 RUN pip3 install -qr requirements.txt
 COPY . .
 
