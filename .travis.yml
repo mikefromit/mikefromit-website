@@ -10,9 +10,9 @@ cache:
   directories:
      - ~/docker
 before_install:
-  - docker build -t heroku/mikefromit .
+  - docker build -t m1yagi/mikefromit .
+  - docker pull redis:latest
 install:
-
   - docker run -d --name redis redis:latest
   - docker run -d -p 5000:5000 --link redis:redis heroku/mikefromit
   - docker ps
