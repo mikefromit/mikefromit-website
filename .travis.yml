@@ -14,9 +14,9 @@ before_install:
   - docker pull redis:latest
 install:
   - docker run -d --name redis redis:latest
-  - docker run -d -p 5000:5000 --link redis:redis mikefromit
+  - docker run -d --name mikefromit -p 5000:5000 --link redis:redis mikefromit
   - docker ps
-  - docker run --link redis:redis -e REDIS_URL=redis://redis:6379 mikefromit /bin/sh -c "cd /app; pip install .[dev]; python setup.py test"
+  - docker run --link redis:redis -e REDIS_URL=redis://redis:6379 mikefromit /bin/sh -c "cd /app;pip uninstall uritemplate.py; pip install .[dev]; python setup.py test"
 script:
   - python setup.py test
 after_success:
