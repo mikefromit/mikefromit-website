@@ -6,13 +6,11 @@ sudo: required
 services:
   - redis-server
   - docker
-before_install:
+install:
   - docker build -t heroku/mikefromit .
   - docker run -d -p 5000:5000 heroku/mikefromit
   - docker ps
   - docker run m1yag1/mikefromit /bin/sh -c "cd /app; pip3 install .[dev]; python setup.py test"
-install:
-  - pip install codecov
 script:
   - python setup.py test
 after_success:
