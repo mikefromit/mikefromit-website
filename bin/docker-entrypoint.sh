@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
 
-if [[ !$PORT ]]; then PORT=5000; fi
+port=${PORT:-"5000"}
 
-gunicorn --bind 0.0.0.0:$PORT "$1"
+gunicorn --bind 0.0.0.0:$port "$1"
