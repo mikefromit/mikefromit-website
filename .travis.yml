@@ -16,7 +16,7 @@ install:
   - docker run -d --name redis redis:latest
   - docker run -d -p 5000:5000 --link redis:redis mikefromit
   - docker ps
-  - docker run --link redis:redis mikefromit /bin/sh -c "cd /app; pip3 install .[dev]; python setup.py test"
+  - docker run --link redis:redis -e REDIS_URL=redis://redis:6379 mikefromit /bin/sh -c "cd /app; pip install .[dev]; python setup.py test"
 script:
   - python setup.py test
 after_success:
