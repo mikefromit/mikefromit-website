@@ -2,7 +2,7 @@ language: python
 python:
 - '3.6'
 dist: trusty
-sudo: false
+sudo: required
 services:
   - redis-server
   - docker
@@ -10,7 +10,6 @@ before_install:
   - docker build -t m1yag1/mikefromit .
   - docker run m1yag1/mikefromit /bin/sh -c "cd /app; pip3 install .[dev]; python setup.py test"
 install:
-  - pip install .[dev]
   - pip install codecov
 script:
   - python setup.py test
