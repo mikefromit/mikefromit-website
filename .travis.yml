@@ -4,10 +4,10 @@ python:
 dist: trusty
 sudo: false
 services:
-- redis-server
-cache:
-  directories:
-  - "$HOME/.cache/pip"
+ - docker
+before_install:
+  - docker build -t m1yag1/mikefromit .
+  - docker run m1yag1/mikefromit /bin/sh -c "cd /app; python setup.py test"
 install:
 - pip install .[dev]
 - pip install codecov
