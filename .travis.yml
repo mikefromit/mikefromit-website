@@ -21,6 +21,7 @@ before_script:
 script:
   - docker exec mikefromitwebsite_web_1 /bin/sh -c "cd /app;python setup.py test"
 after_success:
+  - docker exec mikefromitwebsite_web_1 /bin/sh -c "cd /app;codecov"
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" "$HEROKU_REGISTRY_URL";
     docker push "$HEROKU_REGISTRY_URL"/mikefromit;
