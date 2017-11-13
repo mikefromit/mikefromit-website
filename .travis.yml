@@ -17,7 +17,7 @@ before_install:
 install:
   - docker-compose -f travis-compose.yml up -d
 script:
-  - docker exec mikefromit_website_1 /bin/bash -c "cd /app;python setup.py test"
+  - docker exec mikefromitwebsite_web_1 /bin/sh -c "cd /app;python setup.py test"
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" "$HEROKU_REGISTRY_URL";
