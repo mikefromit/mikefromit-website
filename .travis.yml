@@ -6,6 +6,14 @@ sudo: required
 services:
   - redis-server
   - docker
+before_install:
+before_install:
+  # Remove the PostgreSQL installed by Travis
+  - sudo apt-get purge pgdg-keyring '^postgresql.*' -y
+  - sudo apt-get autoremove -y -qq
+  - sudo rm -rf /etc/postgresql
+  - sudo rm -rf /var/lib/postgresql
+  - sudo rm -f /etc/apt/sources.list.d/pgdg-source.list
 install:
   - docker-compose -f travis-compose.yml up -d
 script:
