@@ -23,8 +23,8 @@ script:
 after_success:
   - docker exec mikefromitwebsite_web_1 /bin/sh -c "cd /app;codecov"
   - docker-compose down
-  - docker build -t registry.heroku.com/mikefromit .
+  - docker build -t registry.heroku.com/mikefromit/web .
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" "$HEROKU_REGISTRY_URL";
-    docker push registry.heroku.com/mikefromit;
+    docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" registry.heroku.com;
+    docker push registry.heroku.com/mikefromit/web;
     fi
