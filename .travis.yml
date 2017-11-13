@@ -1,23 +1,26 @@
 language: python
 python:
-  - "3.6"
-
+  - '3.6'
 dist: trusty
-sudo: false
-
+sudo: required
 services:
   - redis-server
-
+  - docker
 cache:
   directories:
-    - $HOME/.cache/pip
-
+     - ~/docker
+before_install:
+  - docker build -t mikefromit .
+  - docker pull redis:latest
 install:
-  - pip install .[dev]
-  - pip install codecov
-
+  - docker run -d --name redis redis:latest
+  - docker run -d --name mikefromit -p 5000:5000 --link redis:redis mikefromit
+  - docker ps
 script:
-  - python setup.py test
-
+  - docker run --link redis:redis -e REDIS_URL=redis://redis:6379 mikefromit /bin/sh -c "cd /app;python setup.py test"
 after_success:
   - codecov
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" "$HEROKU_REGISTRY_URL";
+    docker push "$HEROKU_REGISTRY_URL"/mikefromit;
+    fi

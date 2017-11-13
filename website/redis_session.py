@@ -25,7 +25,7 @@ class RedisSessionInterface(SessionInterface):
 
     def __init__(self, prefix='session:'):
         redis = Redis.from_url(
-            os.environ.get('REDIS_URL', 'redis://localhost:6379'))
+            os.environ.get('REDIS_URL', 'redis:6379'))
         self.redis = redis
         self.prefix = prefix
 

@@ -4,7 +4,7 @@ RUN apk add --update --no-cache gcc g++ postgresql-dev && \
 WORKDIR /app
 COPY ["requirements.txt", "/app"]
 COPY ["setup.py", "/app"]
-RUN pip3 install -qr requirements.txt
+RUN pip install .[dev]
 COPY . .
 
 # Set the application environment
