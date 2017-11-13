@@ -6,20 +6,11 @@ sudo: required
 services:
   - redis-server
   - docker
-cache:
-  directories:
-     - ~/docker
-before_install:
-  - docker build -t mikefromit .
-  - docker pull redis:latest
 install:
-  - docker run -d --name redis redis:latest
-  - docker run -d --name mikefromit -p 5000:5000 --link redis:redis mikefromit
-  - docker ps
+  - docker-compose -f travis-compose.yml up -d
 script:
-  - docker run --link redis:redis -e REDIS_URL=redis://redis:6379 mikefromit /bin/sh -c "cd /app;python setup.py test"
+  - docker exec mikefromit_website_1 /bin/bash -c "cd /app;python setup.py test"
 after_success:
-  - codecov
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" "$HEROKU_REGISTRY_URL";
     docker push "$HEROKU_REGISTRY_URL"/mikefromit;
