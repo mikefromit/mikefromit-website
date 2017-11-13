@@ -22,7 +22,9 @@ script:
   - docker exec mikefromitwebsite_web_1 /bin/sh -c "cd /app;python setup.py test"
 after_success:
   - docker exec mikefromitwebsite_web_1 /bin/sh -c "cd /app;codecov"
+  - docker-compose down
+  - docker build -t registry.heroku.com/mikefromit .
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" "$HEROKU_REGISTRY_URL";
-    docker push "$HEROKU_REGISTRY_URL"/mikefromit;
+    docker push registry.heroku.com/mikefromit;
     fi
