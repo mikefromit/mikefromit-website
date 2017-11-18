@@ -12,6 +12,7 @@ setup(
     install_requires=[
         "alembic==0.9.6",
         "Babel==2.5.1",
+        "bcrypt==3.1.4",
         "beautifulsoup4==4.6.0",
         "blinker==1.4",
         "certifi==2017.7.27.1",

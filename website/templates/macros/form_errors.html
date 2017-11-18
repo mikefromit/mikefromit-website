@@ -1,0 +1,17 @@
+{% macro form_errors(form, hiddens=True) %}
+  {%- if form.errors %}
+    {%- for fieldname, errors in form.errors.items() %}
+        {%- for error in errors %}
+          <p class="error">{{error}}</p>
+        {%- endfor %}
+    {%- endfor %}
+  {%- endif %}
+{%- endmacro %}
+
+{% macro field_errors(field) %}
+    {% if field.errors %}
+        {%- for error in field.errors %}
+            <p class="error">{{ error }}</p>
+        {%- endfor %}
+    {% endif %}
+{% endmacro %}

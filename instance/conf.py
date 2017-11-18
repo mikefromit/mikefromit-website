@@ -1,4 +1,5 @@
 import os
+import uuid
 
 from website.utils import make_database_url
 
@@ -7,7 +8,7 @@ from website.utils import make_database_url
 
 # MAIN FLASK APPLICATION
 DEBUG = os.environ.get('FLASK_DEBUG', False)
-SECRET_KEY = os.environ.get('SESSION_SECRET')
+SECRET_KEY = os.environ.get('SESSION_SECRET', str(uuid.uuid4()))
 
 # REDIS
 REDIS_URL = os.environ.get('REDIS_URL', None)

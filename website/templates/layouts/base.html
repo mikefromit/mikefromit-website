@@ -10,24 +10,18 @@
           <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
         {%- endblock metas %}
 
         {%- block styles %}
           <!-- ADD CSS STYLE SOURCES NEEDED FOR ALL TEMPLATES -->
-
           <!-- Import Google Icon Font -->
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 rel="stylesheet">
           <!-- Import Google Roboto Font -->
-          <link
-            href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'
-            rel='stylesheet'>
+          <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet'>
           <!-- Import Custom CSS -->
           <!-- Call super() on the child template to run these -->
-          <link rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
         {%- endblock styles %}
 
       {% endblock head %}
@@ -38,11 +32,12 @@
     {% block body -%}
 
       {% block header %}
+          {% block navbar %}
+              {% include 'includes/nav.html' %}
+          {% endblock navbar %}
       {% endblock header %}
 
-      {% block navbar %}
-        {% include 'includes/nav.html' %}
-      {% endblock navbar %}
+
 
       {% block sidebar %}
 
