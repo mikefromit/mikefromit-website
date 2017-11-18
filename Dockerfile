@@ -11,6 +11,7 @@ COPY . .
 ENV PYTHONIOENCODING utf_8
 ENV PYTHONPATH /app:$PYTHONPATH
 ENV PATH="/app/bin:${PATH}"
+ENV FLASK_APP=/app/wsgi.py
 
 # Run as User
 #RUN adduser -D myuser
