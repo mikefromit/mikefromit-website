@@ -38,6 +38,7 @@ setup(
         "MarkupSafe==1.0",
         "mikefromit-website==0.0.1",
         "passlib==1.7.1",
+        "psycopg2==2.7.3.2",
         "py==1.4.34",
         "pytest==3.1.3",
         "python-dateutil==2.6.1",
