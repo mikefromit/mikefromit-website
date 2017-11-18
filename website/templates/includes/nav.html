@@ -1,39 +1,36 @@
-<div class="navbar">
+<div class="container">
+  <!-- INSERT SIDENAV -->
+  <ul id="slide-out" class="side-nav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <!-- SIDEBAR BACKGROUND -->
+          <img src="">
+        </div>
+        <a href="#!user"><img class="circle" src="https://avatars.githubusercontent.com/m1yag1"></a>
+        <a href="#!name"><span class="black-text name">Mike From IT</span></a>
+        <a href="#!email"><span
+          class="black-text email">@mikefr0mit</span></a>
+      </div>
+    </li>
+    <li><a href="#!" class="subheader">Admin</a></li>
+    {% if current_user.is_authenticated %}
+      <li><a href="#!dashboard"><i class="material-icons">apps</i>Dashboard</a></li>
+      <li><a href="{{ url_for('security.logout') }}"><i class="material-icons">exit_to_app</i>Logout</a></li>
+    {% else %}
+      <li><a href="{{ url_for('security.login') }}"><i class="material-icons">account_circle</i>Login</a></li>
+    {% endif %}
+    <li><a href="#!" class="subheader">Pages</a></li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons">language</i>Contact</a></li>
+  </ul>
 
-  <nav>
+  <nav class="navbar">
     <div class="nav-wrapper grey darken-3">
-      <a href="#!" class="brand-logo center">mikefromit</a>
-      <ul id="slide-out" class="side-nav">
-        <li>
-          <div class="user-view">
-            <div class="background">
-              <img src="">
-            </div>
-            <a href="#!user"><img class="circle" src="https://avatars.githubusercontent.com/m1yag1"></a>
-            <a href="#!name"><span class="black-text name">Mike From IT</span></a>
-            <a href="#!greeting"><span class="black-text happy-greeting">Hello =)</span></a>
-          </div>
-        </li>
-        <li>
-          <div class="divider"></div>
-        </li>
-        <li><a class="subheader">Admin</a></li>
-        <li><a href="#!"><i class="material-icons">account_circle</i>Login</a>
-        </li>
-        <li>
-          <div class="divider"></div>
-        </li>
-        <li><a class="subheader">Pages</a></li>
-        <li><a href="#!"><i class="material-icons">keyboard</i>About</a></li>
-        <li><a href="#!"><i class="material-icons">language</i>Contact</a></li>
-        <li>
-          <div class="divider"></div>
-        </li>
+      <a href="#!" class="brand-logo center hide-on-small-only">mikefromit</a>
+      <ul id="nav-mobile" class="left">
+        <li><a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons show-on-large">menu</i></a></li>
+        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
       </ul>
-      <a href="#" data-activates="slide-out"
-         class="button-collapse show-on-large"><i
-        class="material-icons">menu</i></a>
     </div>
   </nav>
-
 </div>
