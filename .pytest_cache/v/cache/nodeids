@@ -1,4 +1,0 @@
-[
-  "tests/unit/test_home.py::test_home_route",
-  "tests/unit/test_utils.py::test_make_database_url"
-]
