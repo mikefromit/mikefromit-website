@@ -10,7 +10,7 @@ services:
       - db
       - redis
   db:
-    image: postgres:9.4-alpine
+    image: postgres:9.6-alpine
     environment:
       - DB_NAME=testing
     ports:
