@@ -12,6 +12,7 @@ SECRET_KEY = os.environ.get('SESSION_SECRET', str(uuid.uuid4()))
 
 # REDIS
 SESSION_TYPE = 'redis'
+SESSION_REDIS = os.environ.get('REDIS_URL', '127.0.0.1:6379')
 
 # Flask-SQLAlchemy
 SQLALCHEMY_TRACK_MODIFICATIONS = True
