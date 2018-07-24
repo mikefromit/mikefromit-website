@@ -5,7 +5,7 @@ WORKDIR /app
 COPY ["requirements.txt", "/app"]
 COPY ["requirements-dev.txt", "/app"]
 
-RUN pip install -qr requirements-dev.txt
+RUN pip install -r requirements-dev.txt
 COPY . .
 
 # Set the application environment

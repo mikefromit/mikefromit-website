@@ -3,7 +3,7 @@ RUN apk add --update --no-cache gcc g++ postgresql-dev && \
     apk add --no-cache tini && apk add --no-cache libffi-dev
 WORKDIR /app
 COPY ["requirements.txt", "/app"]
-RUN pip install -qr requirements.txt
+RUN pip install -r requirements.txt
 COPY . .
 
 # Set the application environment
