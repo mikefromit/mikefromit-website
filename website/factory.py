@@ -1,11 +1,9 @@
 from flask import Flask
 from flask_security import SQLAlchemyUserDatastore
 
-from .core import db, security
+from .core import db, security, sess
 from .helpers import register_blueprints
 from .models import User, Role
-from .redis_session import RedisSessionInterface
-
 
 def create_app(package_name, package_path, settings=None):
     """
@@ -35,9 +33,7 @@ def create_app(package_name, package_path, settings=None):
     app.security = security.init_app(app,
                                      SQLAlchemyUserDatastore(db, User, Role),
                                      register_blueprint=True)
-
-    # Use redis sessions
-    app.session_interface = RedisSessionInterface()
+    sess.init_app(app)
 
     # Helper for auto-registering blueprints
     register_blueprints(app, package_name, package_path)

@@ -1,6 +1,8 @@
 import os
 import uuid
 
+import redis
+
 from website.utils import make_database_url
 
 
@@ -11,7 +13,8 @@ DEBUG = os.environ.get('FLASK_DEBUG', False)
 SECRET_KEY = os.environ.get('SESSION_SECRET', str(uuid.uuid4()))
 
 # REDIS
-REDIS_URL = os.environ.get('REDIS_URL', None)
+SESSION_TYPE = 'redis'
+SESSION_REDIS = redis.Redis('redis')
 
 # Flask-SQLAlchemy
 SQLALCHEMY_TRACK_MODIFICATIONS = True
