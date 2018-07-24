@@ -17,11 +17,11 @@ install:
   - docker-compose -f travis-compose.yml up -d
 before_script:
   # Install the packages needed for development
-  - docker exec mikefromitwebsite_web_1 /bin/sh -c "cd/app;pip install .[dev]"
+  - docker-compose exec web /bin/sh -c "cd/app;pip install -rq requirements-dev.txt"
 script:
-  - docker exec mikefromitwebsite_web_1 /bin/sh -c "cd /app;pytest"
+  - docker-compose exec web /bin/sh -c "cd /app;pytest"
 after_success:
-  - docker exec mikefromitwebsite_web_1 /bin/sh -c "cd /app;codecov"
+  - docker-compose exec web /bin/sh -c "cd /app;codecov"
   - docker-compose down
   - docker build -t registry.heroku.com/mikefromit/web .
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
