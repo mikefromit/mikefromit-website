@@ -4,20 +4,20 @@ services:
     volumes:
       - .:/app
     ports:
-      - "5000:80"
+      - "5000:5000"
     environment:
       - FLASK_APP=wsgi.py
       - FLASK_DEBUG=1
-    command: flask run --host=0.0.0.0 --port=80
+      - DB_HOST=db
+      - DB_NAME=mikefromit
+    command: flask run --host=0.0.0.0 --port=5000
     links:
       - db
       - redis
   db:
     image: postgres:9.6-alpine
-    environment:
-      - DB_NAME=testing
     ports:
-      - '127.0.0.1:5432:5432'
+      - '127.0.0.1:5433:5432'
   redis:
     image: redis:latest
     ports:
