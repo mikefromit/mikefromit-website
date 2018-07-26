@@ -3,6 +3,7 @@
 attrs==18.1.0
 atomicwrites==1.1.5
 beautifulsoup4==4.6.0
+codecov==2.0.15
 coverage==4.5.1
 more-itertools==4.2.0
 pluggy==0.6.0
