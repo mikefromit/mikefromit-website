@@ -29,8 +29,8 @@ test: ## run tests quickly with the default Python
 docs: ## generate Sphinx HTML documentation
 
 initdb:
-	psql -h 127.0.0.1 -p 5432 -d postgres -U postgres -c "DROP DATABASE IF EXISTS website"
-	psql -h 127.0.0.1 -p 5432 -d postgres -U postgres -c "CREATE DATABASE website ENCODING 'UTF8'"
+	psql -h 127.0.0.1 -p 5432 -d postgres -U postgres -c "DROP DATABASE IF EXISTS mikefromit"
+	psql -h 127.0.0.1 -p 5432 -d postgres -U postgres -c "CREATE DATABASE mikefromit ENCODING 'UTF8'"
 	alembic upgrade head
 
 venv:

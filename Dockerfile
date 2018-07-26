@@ -12,6 +12,8 @@ ENV PYTHONPATH /app:$PYTHONPATH
 ENV PATH="/app/bin:${PATH}"
 ENV FLASK_APP=/app/wsgi.py
 
+# Heroku recommends running as a user but it didn't work
+# FIXME: fix running docker container as user in dockerfile on Heroku
 # Run as User
 #RUN adduser -D myuser
 #USER myuser

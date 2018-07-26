@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    volumes:
+      - .:/app
+    ports:
+      - "5000:80"
+    environment:
+      - FLASK_APP=wsgi.py
+      - FLASK_DEBUG=1
+    command: flask run --host=0.0.0.0 --port=80
+    links:
+      - db
+      - redis
+  db:
+    image: postgres:9.6-alpine
+    environment:
+      - DB_NAME=testing
+    ports:
+      - '127.0.0.1:5432:5432'
+  redis:
+    image: redis:latest
+    ports:
+      - '127.0.0.1:6380:6380'
