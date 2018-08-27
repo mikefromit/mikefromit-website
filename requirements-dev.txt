@@ -1,7 +1,7 @@
 -r requirements.txt
 
 attrs==18.1.0
-atomicwrites==1.1.5
+atomicwrites==1.2.0
 beautifulsoup4==4.6.0
 codecov==2.0.15
 coverage==4.5.1
