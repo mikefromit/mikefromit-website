@@ -31,7 +31,7 @@ python-editor==1.0.4
 pytz==2019.3
 redis==3.4.1
 requests==2.23.0
-six==1.11.0
+six==1.14.0
 speaklater==1.3
 SQLAlchemy==1.2.10
 uritemplate==3.0.0
