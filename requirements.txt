@@ -8,7 +8,7 @@ chardet==3.0.4
 click==7.1.1
 Flask==1.1.1
 Flask-BabelEx==0.9.4
-Flask-Login==0.4.1
+Flask-Login==0.5.0
 Flask-Mail==0.9.1
 Flask-Principal==0.4.0
 Flask-Security==3.0.0
