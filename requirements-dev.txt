@@ -4,7 +4,7 @@ attrs==19.3.0
 atomicwrites==1.4.0
 beautifulsoup4==4.9.1
 codecov==2.1.0
-coverage==4.5.1
+coverage==5.1
 more-itertools==4.2.0
 pluggy==0.6.0
 py==1.5.4
