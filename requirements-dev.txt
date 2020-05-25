@@ -9,7 +9,7 @@ more-itertools==8.3.0
 pluggy==0.13.1
 py==1.8.1
 pytest==5.4.2
-pytest-cov==2.5.1
+pytest-cov==2.9.0
 pytest-runner==4.2
 waitress==1.1.0
 WebOb==1.8.2
