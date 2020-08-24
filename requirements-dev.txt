@@ -2,7 +2,7 @@
 
 attrs==20.1.0
 atomicwrites==1.4.0
-beautifulsoup4==4.6.0
+beautifulsoup4==4.9.1
 codecov==2.0.15
 coverage==4.5.1
 more-itertools==4.2.0
