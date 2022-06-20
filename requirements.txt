@@ -4,7 +4,7 @@ bcrypt==3.2.2
 blinker==1.4
 certifi==2022.6.15
 cffi==1.15.0
-chardet==3.0.4
+chardet==4.0.0
 click==6.7
 Flask==1.0.2
 Flask-BabelEx==0.9.3
