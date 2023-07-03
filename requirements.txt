@@ -28,7 +28,7 @@ psycopg2==2.9.6
 pycparser==2.21
 python-dateutil==2.8.2
 python-editor==1.0.4
-pytz==2018.5
+pytz==2023.3
 redis==2.10.6
 requests==2.19.1
 six==1.11.0
