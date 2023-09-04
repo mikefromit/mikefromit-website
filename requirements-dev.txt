@@ -12,5 +12,5 @@ pytest==7.4.1
 pytest-cov==4.1.0
 pytest-runner==6.0.0
 waitress==2.1.2
-WebOb==1.8.2
+WebOb==1.8.7
 WebTest==2.0.30
