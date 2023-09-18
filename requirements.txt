@@ -18,7 +18,7 @@ Flask-WTF==1.1.1
 gevent==23.9.1
 greenlet==2.0.2
 gunicorn==21.2.0
-idna==2.7
+idna==3.4
 itsdangerous==0.24
 Jinja2==2.10
 Mako==1.0.7
