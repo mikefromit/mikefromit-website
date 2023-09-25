@@ -38,4 +38,4 @@ uritemplate==4.1.1
 uritemplate.py==3.0.2
 urllib3==2.0.5
 Werkzeug==2.3.7
-WTForms==2.2.1
+WTForms==3.0.1
