@@ -19,7 +19,7 @@ gevent==23.9.1
 greenlet==2.0.2
 gunicorn==21.2.0
 idna==3.4
-itsdangerous==0.24
+itsdangerous==2.1.2
 Jinja2==2.10
 Mako==1.0.7
 MarkupSafe==1.0
