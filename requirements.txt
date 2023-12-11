@@ -20,7 +20,7 @@ greenlet==3.0.2
 gunicorn==21.2.0
 idna==3.6
 itsdangerous==2.1.2
-Jinja2==2.10
+Jinja2==3.1.2
 Mako==1.0.7
 MarkupSafe==1.0
 passlib==1.7.1
