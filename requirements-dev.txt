@@ -8,7 +8,7 @@ coverage==7.5.1
 more-itertools==10.2.0
 pluggy==1.5.0
 py==1.11.0
-pytest==3.6.3
+pytest==8.2.1
 pytest-cov==2.5.1
 pytest-runner==4.2
 waitress==1.1.0
