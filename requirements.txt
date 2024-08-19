@@ -1,6 +1,6 @@
 alembic==1.13.2
 Babel==2.16.0
-bcrypt==3.1.4
+bcrypt==4.2.0
 blinker==1.4
 certifi==2018.4.16
 cffi==1.11.5
