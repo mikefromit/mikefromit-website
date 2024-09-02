@@ -37,5 +37,5 @@ SQLAlchemy==2.0.32
 uritemplate==4.1.1
 uritemplate.py==3.0.2
 urllib3==2.2.2
-Werkzeug==0.14.1
+Werkzeug==3.0.4
 WTForms==2.2.1
