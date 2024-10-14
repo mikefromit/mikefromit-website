@@ -16,7 +16,7 @@ Flask-Session==0.8.0
 Flask-SQLAlchemy==3.1.1
 Flask-WTF==1.2.1
 gevent==24.10.2
-greenlet==0.4.14
+greenlet==3.1.1
 gunicorn==19.9.0
 idna==2.7
 itsdangerous==0.24
